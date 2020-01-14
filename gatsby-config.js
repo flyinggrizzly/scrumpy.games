@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
+    title: `Scrumpy Games`,
+    author: `Sean DMR`,
+    description: `Roleplaying game group in the Southwest of England`,
+    siteUrl: `https://scrumpy.games/`,
     social: {
-      twitter: `mattinthecouch`,
+      twitter: `ScrumpyGames`,
+      mailingList: `https://mailchi.mp/3affafba7ea7/scrumpy-games-mailing-list`,
+      eventbriteProfile: `https://www.eventbrite.com/o/scrumpy-games-28748384815`
     },
   },
   plugins: [
