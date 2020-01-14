@@ -12,16 +12,14 @@ class Layout extends React.Component {
     return (
       <React.Fragment>
         <Navbar>
-          <Navbar.Brand style={{ fontSize: '2.4em' }}>
+          <Navbar.Brand href="/" style={{ fontSize: '2.4em', boxShadow: 'none' }}>
             Scrumpy Games
           </Navbar.Brand>
-          <Container className='justify-content-end' fluid>
-            <Nav>
-              <Nav.Item><Nav.Link href={ eventbriteProfile }>Events</Nav.Link></Nav.Item>
-              <Nav.Item><Nav.Link href={ mailingList }>Mailing list</Nav.Link></Nav.Item>
-              <Nav.Item><Nav.Link href={ twitter }>Twitter</Nav.Link></Nav.Item>
-            </Nav>
-          </Container>
+          <Nav variant='pills'>
+            <Nav.Link href='/events' style={{ fontSize: '1.3em', boxShadow: 'none' }}>Events</Nav.Link>
+            <Nav.Link href={ mailingList } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Mailing list</Nav.Link>
+            <Nav.Link href={ twitter } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Twitter</Nav.Link>
+          </Nav>
         </Navbar>
         <div
           style={{

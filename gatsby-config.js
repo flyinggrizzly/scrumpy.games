@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `Scrumpy Games`,
@@ -138,6 +140,21 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-source-eventbrite',
+      options: {
+        // You will need to generate an Eventbrite Access token
+        // https://www.eventbrite.com/myaccount/apps/
+        // Org ID: 353662354489
+        token: process.env.EVENTBRITE_TOKEN,
+        organizationId: '353662354489',
+        // This option will pass query param directly to the event search API
+        // https://www.eventbrite.com/platform/api#/reference/event-search/list/search-events
+        query: {
+          expand: [ 'venue' ]
+        },
       },
     },
   ],
