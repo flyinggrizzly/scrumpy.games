@@ -6,6 +6,8 @@ module.exports = {
     siteUrl: `https://scrumpy.games/`,
     social: {
       twitter: `ScrumpyGames`,
+      mailingList: `https://mailchi.mp/3affafba7ea7/scrumpy-games-mailing-list`,
+      eventbriteProfile: `https://www.eventbrite.com/o/scrumpy-games-28748384815`
     },
   },
   plugins: [
