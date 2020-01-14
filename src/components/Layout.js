@@ -18,7 +18,7 @@ class Layout extends React.Component {
           <Nav variant='pills'>
             <Nav.Link href='/events' style={{ fontSize: '1.3em', boxShadow: 'none' }}>Events</Nav.Link>
             <Nav.Link href={ mailingList } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Mailing list</Nav.Link>
-            <Nav.Link href={ twitter } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Twitter</Nav.Link>
+            <Nav.Link href={ `https://twitter.com/${ twitter }` } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Twitter</Nav.Link>
           </Nav>
         </Navbar>
         <div
