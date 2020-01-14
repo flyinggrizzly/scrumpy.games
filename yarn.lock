@@ -4723,6 +4723,13 @@ event-source-polyfill@^1.0.8:
   resolved "https://registry.yarnpkg.com/event-source-polyfill/-/event-source-polyfill-1.0.8.tgz#a0d40fad813bf2ed2ccf3b7839f9d625768fc310"
   integrity sha512-wC9j5vjH9Xu9s8XhumgBoypdFJswraU1HXykqCCD/b7q+EH4P/avf5fM1e8IiHyHNZOeOiWwrki2775XFTYyeg==
 
+eventbrite@^1.2.1:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/eventbrite/-/eventbrite-1.2.2.tgz#ea0d92e03424d7c531bbadec63a44c5e6d01524d"
+  integrity sha512-Oo8Hk2udW5L9zRG0GO4ic/Dc9hvrtxRTIPw32PR2VYwinRnLHr4WWx7JPjIHnzGvigc3MTeuuPwQ4XCW4MoXrQ==
+  dependencies:
+    isomorphic-fetch "^2.2.1"
+
 eventemitter3@^3.0.0, eventemitter3@^3.1.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
@@ -5504,6 +5511,15 @@ gatsby-link@^2.2.10:
     "@types/reach__router" "^1.2.4"
     prop-types "^15.7.2"
 
+gatsby-node-helpers@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-node-helpers/-/gatsby-node-helpers-0.3.0.tgz#3bdca3b7902a702a5834fef280ad66d51099d57c"
+  integrity sha1-O9yjt5AqcCpYNP7ygK1m1RCZ1Xw=
+  dependencies:
+    json-stringify-safe "^5.0.1"
+    lodash "^4.17.4"
+    p-is-promise "^1.1.0"
+
 gatsby-page-utils@^0.0.12:
   version "0.0.12"
   resolved "https://registry.yarnpkg.com/gatsby-page-utils/-/gatsby-page-utils-0.0.12.tgz#afb0dd9eb5254cff17107d3b6d32cfdfeb76728d"
@@ -5647,6 +5663,14 @@ gatsby-plugin-sharp@^2.0.6:
     semver "^5.7.1"
     sharp "^0.23.0"
     svgo "^1.3.0"
+
+gatsby-plugin-source-eventbrite@^2.0.0-next.0:
+  version "2.0.0-next.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-source-eventbrite/-/gatsby-plugin-source-eventbrite-2.0.0-next.0.tgz#def2ad62b6703e5fa0b60899782cd0c082dfa42d"
+  integrity sha512-CrOywV3g6HdhbOH6HwYsxgsxwGugi6tJ3bAcAhCbz24ZS9T9cndgfY8pua87IaHD44edfN7crIXh6OnY8jOk2A==
+  dependencies:
+    eventbrite "^1.2.1"
+    gatsby-node-helpers "^0.3.0"
 
 gatsby-plugin-typography@^2.2.0:
   version "2.3.5"
@@ -7625,7 +7649,7 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-isomorphic-fetch@^2.1.1:
+isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   integrity sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
