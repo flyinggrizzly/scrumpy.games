@@ -9,14 +9,20 @@ const Index = ({ data, location }) => {
   const { twitter, eventbriteProfile, mailingList } = data.site.siteMetadata.social
 
   return (
-    <Layout location={ location } title={ siteTitle }>
+    <Layout
+      location={ location }
+      title={ siteTitle }
+      twitter={ twitter }
+      eventbriteProfile={ eventbriteProfile }
+      mailingList={ mailingList }
+    >
       <SEO
         title="Scrumpy Games"
         keywords={[ `roleplaying-game`, `rpg`, `Frome`, `Southwest UK`, `tabletop games`, `ttrpg`, `trpg`, `LARP` ]}
       />
 
       <h2>
-        Welcome!
+        Welcome to Scrumpy Games!
       </h2>
       <p>
         We are a group of roleplayers in the Southwest of England, mostly centered in/around Frome.
