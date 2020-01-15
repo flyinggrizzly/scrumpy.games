@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/mailing-list"
+  to = "https://mailchi.mp/3affafba7ea7/scrumpy-games-mailing-list"
+  status = 302
+  force = true
