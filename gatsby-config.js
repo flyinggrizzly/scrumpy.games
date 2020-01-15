@@ -153,6 +153,7 @@ module.exports = {
         // This option will pass query param directly to the event search API
         // https://www.eventbrite.com/platform/api#/reference/event-search/list/search-events
         query: {
+          status: 'live,started,ended,completed',
           expand: [ 'venue' ]
         },
       },
