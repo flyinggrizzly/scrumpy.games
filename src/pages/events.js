@@ -61,7 +61,7 @@ const Event = ({ event, upcoming }) => {
     }
   } = event
 
-  let startTime = dayjs(start.local).format('dddd MMM YYYY, h:mm A')
+  let startTime = dayjs(start.local).format('dddd, MMM D YYYY, h:mm A')
   let endTime = dayjs(end.local).format('h:mm A')
 
   let mapsUrl = `https://www.google.com/maps/place/${ location.replace(/ /g, '+') }`
