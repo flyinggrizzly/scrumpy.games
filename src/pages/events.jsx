@@ -66,9 +66,20 @@ const Event = ({ event, upcoming }) => {
 
   let mapsUrl = `https://www.google.com/maps/place/${ location.replace(/ /g, '+') }`
 
+  let masksBackgroundImageSrc = '/event-images/masks.jpg'
+  let honeyHeistBackgroundImageSrc = '/event-images/honey-heist.png'
+
+  let backgroundImageSrc
+  if (text.includes("Masks"))
+    backgroundImageSrc = masksBackgroundImageSrc
+
+  if (text.includes("Single Session"))
+    backgroundImageSrc = honeyHeistBackgroundImageSrc
+
   return (
     <div style={{ padding: '5px' }}>
       <Card>
+        <Card.Img variant='top' src={ backgroundImageSrc } />
         <Card.Body>
           <Card.Title>{ text }</Card.Title>
           <Card.Text>
