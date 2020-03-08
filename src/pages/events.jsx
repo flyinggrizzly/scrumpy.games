@@ -19,7 +19,7 @@ const Events = ({ location, data }) => {
   return (
     <Layout
       location={ location }
-      title={ siteTitle }
+      title={ `Events - ${ siteTitle }` }
       twitter={ twitter }
       eventbriteProfile={ eventbriteProfile }
       mailingList={ mailingList }
