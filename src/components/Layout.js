@@ -11,15 +11,18 @@ class Layout extends React.Component {
 
     return (
       <React.Fragment>
-        <Navbar>
-          <Navbar.Brand href="/" style={{ fontSize: '2.4em', boxShadow: 'none' }}>
+        <Navbar collapseOnSelect expand='md'>
+          <Navbar.Brand href="/" style={{ fontSize: '1.8em', boxShadow: 'none' }}>
             Scrumpy Games
           </Navbar.Brand>
-          <Nav variant='pills'>
-            <Nav.Link href='/events' style={{ fontSize: '1.3em', boxShadow: 'none' }}>Events</Nav.Link>
-            <Nav.Link href={ mailingList } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Mailing list</Nav.Link>
-            <Nav.Link href={ `https://twitter.com/${ twitter }` } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Twitter</Nav.Link>
-          </Nav>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav" >
+            <Nav variant='pills'>
+              <Nav.Link href='/events' style={{ fontSize: '1.3em', boxShadow: 'none' }}>Events</Nav.Link>
+              <Nav.Link href={ mailingList } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Mailing list</Nav.Link>
+              <Nav.Link href={ `https://twitter.com/${ twitter }` } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Twitter</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Navbar>
         <div
           style={{
