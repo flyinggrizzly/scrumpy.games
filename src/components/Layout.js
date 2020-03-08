@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 
@@ -18,6 +19,9 @@ class Layout extends React.Component {
 
     return (
       <React.Fragment>
+        <Helmet>
+          <title>{ title }</title>
+        </Helmet>
         <Navbar collapseOnSelect expand='md' variant='dark' style={{ background: '#0e4749' }}>
           <Navbar.Brand href="/" style={{ fontSize: '1.8em', boxShadow: 'none', }}>
             Scrumpy Games
