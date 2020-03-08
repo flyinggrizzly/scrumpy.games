@@ -1,12 +1,51 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import _ from 'lodash'
+import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+dayjs.extend(utc)
 
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 
+function dateForEvent(event) {
+  let start = dayjs(_.get(event, 'node.start.local'))
+
+  let startDay = start.format('dddd')
+  let startDate = start.format('MMM D YYYY')
+  let startTime = start.format('h:mm A')
+
+  return `${ startDay }, ${ startDate }, at ${ startTime }`
+}
+
+function urlForEvent(event) {
+  return _.get(event, 'node.url', '#')
+}
+
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { twitter, eventbriteProfile, mailingList } = data.site.siteMetadata.social
+
+  const events = data.allEventbriteEvent.edges
+  const nextSingleSessionEvent = _(events)
+    // Filter to future events
+    .filter(event => {
+      let start = _.get(event, 'node.start.utc')
+
+      return dayjs.utc(start).isAfter(dayjs.utc())
+    })
+    // Filter to SSG events
+    .filter(event => {
+      let title = _.get(event, 'node.name.text', '')
+
+      return title.includes("Single Session Games")
+    })
+    // Get next SSG event
+    .minBy(event => {
+      let utc = _.get(event, 'node.start.utc', '2999-12-31T23:59:59Z')
+
+      return utc
+    })
 
   return (
     <Layout
@@ -58,7 +97,7 @@ const Index = ({ data, location }) => {
           Morningstar, <a href="https://gshowitt.itch.io/honey-heist"><i>Honey Heist</i></a> by Grant Howitt, and <a href="https://bladesinthedark.com/"><i>Blades in the Dark</i></a> by John Harper to name a few!
         </p>
         <p>
-          Our next Saturday event will be on <strong>Saturday February 8 in Frome</strong>, and we'd <a href="https://www.eventbrite.com/e/single-session-games-at-the-griffin-tickets-85672391429">love for you to join us!</a>
+          Our next Single Session Game event will be on <strong>{ dateForEvent(nextSingleSessionEvent) }</strong>, and we'd <a href={ urlForEvent(nextSingleSessionEvent) }>love for you to join us!</a>
         </p>
     </Section>
     </Layout>
@@ -74,16 +113,31 @@ const Section = ({ children }) => (
 export default Index
 
 export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title,
-        social {
-          twitter,
-          eventbriteProfile,
-          mailingList
-        }
+ query {
+  site {
+    siteMetadata {
+      title,
+      social {
+        twitter,
+        eventbriteProfile,
+        mailingList
+      }
+    }
+  },
+  allEventbriteEvent {
+    edges {
+      node {
+        id,
+        name { text },
+        description { text },
+        url,
+        start {
+          timezone,
+          local,
+          utc,
+        },
       }
     }
   }
+}
 `
