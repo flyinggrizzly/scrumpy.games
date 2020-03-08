@@ -67,11 +67,15 @@ const Event = ({ event, upcoming }) => {
   let mapsUrl = `https://www.google.com/maps/place/${ location.replace(/ /g, '+') }`
 
   let masksBackgroundImageSrc = '/event-images/masks.jpg'
+  let monsterOfTheWeekBackgroundImageSrc = 'event-images/monster-of-the-week.jpg'
   let honeyHeistBackgroundImageSrc = '/event-images/honey-heist.png'
 
   let backgroundImageSrc
   if (text.includes("Masks"))
     backgroundImageSrc = masksBackgroundImageSrc
+
+  if (text.includes("Monster of the Week"))
+    backgroundImageSrc = monsterOfTheWeekBackgroundImageSrc
 
   if (text.includes("Single Session"))
     backgroundImageSrc = honeyHeistBackgroundImageSrc
