@@ -5,6 +5,20 @@ import { Container, Navbar, Nav } from 'react-bootstrap'
 
 import { rhythm, scale } from '../utils/typography'
 
+const Logo = () => (
+  <img src="/images/dice-tilt.png"
+    style={{
+      display: 'inline-block',
+      height: '1.5em',
+      background: 'white',
+      borderRadius: 100,
+      padding: '5px',
+      marginBottom: '3px',
+      marginRight: '12px',
+    }}
+  />
+)
+
 class Layout extends React.Component {
   render() {
     const { location, title, children, twitter, eventbriteProfile, mailingList } = this.props
@@ -24,6 +38,7 @@ class Layout extends React.Component {
         </Helmet>
         <Navbar collapseOnSelect expand='md' variant='dark' style={{ background: '#0e4749' }}>
           <Navbar.Brand href="/" style={{ fontSize: '1.8em', boxShadow: 'none', }}>
+            <Logo />
             Scrumpy Games
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
