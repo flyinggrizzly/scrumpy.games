@@ -9,18 +9,25 @@ class Layout extends React.Component {
     const { location, title, children, twitter, eventbriteProfile, mailingList } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
 
+    const linkStyle = {
+      color: '#eee',
+      textDecoration: 'underline',
+      fontSize: '1.3em',
+      boxShadow: 'none'
+    }
+
     return (
       <React.Fragment>
-        <Navbar collapseOnSelect expand='md'>
-          <Navbar.Brand href="/" style={{ fontSize: '1.8em', boxShadow: 'none' }}>
+        <Navbar collapseOnSelect expand='md' variant='dark' style={{ background: '#0e4749' }}>
+          <Navbar.Brand href="/" style={{ fontSize: '1.8em', boxShadow: 'none', }}>
             Scrumpy Games
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" >
-            <Nav variant='pills'>
-              <Nav.Link href='/events' style={{ fontSize: '1.3em', boxShadow: 'none' }}>Events</Nav.Link>
-              <Nav.Link href={ mailingList } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Mailing list</Nav.Link>
-              <Nav.Link href={ `https://twitter.com/${ twitter }` } style={{ fontSize: '1.3em', boxShadow: 'none' }}>Twitter</Nav.Link>
+            <Nav variant='pills' className='ml-auto'>
+              <Nav.Link href='/events' style={ linkStyle }>Events</Nav.Link>
+              <Nav.Link href={ mailingList } style={ linkStyle }>Mailing list</Nav.Link>
+              <Nav.Link href={ `https://twitter.com/${ twitter }` } style={ linkStyle }>Twitter</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
