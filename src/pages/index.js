@@ -52,7 +52,7 @@ const Index = ({ data, location }) => {
         Ongoing Drop-in Games
       </h3>
       <p>
-        We also run (roughly) bi-weekly games with a rotating cast of characters. Currently we are playing <a href="https://www.evilhat.com/home/monster-of-the-week/"><i>Monster of the Week</i></a> by Michael Sands. This game is wrapping up soon, and a new one will be announced soon!
+        We also run (roughly) monthly games with a rotating cast of characters. Currently we are playing <a href="https://www.magpiegames.com/masks/"><i>Masks: A New Generation</i></a> by Brendan Conway.
       </p>
 
     </Layout>
