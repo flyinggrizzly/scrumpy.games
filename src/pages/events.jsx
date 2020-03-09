@@ -81,7 +81,7 @@ const Event = ({ event, upcoming }) => {
     backgroundImageSrc = honeyHeistBackgroundImageSrc
 
   return (
-    <div style={{ padding: '5px' }}>
+    <li style={{ display: 'block', listStyle: 'none', padding: '5px' }}>
       <Card>
         <Card.Img variant='top' src={ backgroundImageSrc } />
         <Card.Body>
@@ -100,7 +100,7 @@ const Event = ({ event, upcoming }) => {
           </Button>
         </Card.Body>
       </Card>
-    </div>
+    </li>
   )
 }
 
