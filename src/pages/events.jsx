@@ -25,7 +25,7 @@ const Events = ({ location, data }) => {
       mailingList={ mailingList }
     >
       <h3>Upcoming Events</h3>
-      <ul>
+      <ul style={{ marginLeft: 0 }}>
         {
           futureEvents.map(event => {
             return <Event key={ event.node.id } upcoming event={ event } />
@@ -33,7 +33,7 @@ const Events = ({ location, data }) => {
         }
       </ul>
       <h3>Past Events</h3>
-      <ul>
+      <ul style={{ marginLeft: 0 }}>
         {
           pastEvents.map(event => {
             return <Event event={ event } key={ event.node.id } />
@@ -81,7 +81,7 @@ const Event = ({ event, upcoming }) => {
     backgroundImageSrc = honeyHeistBackgroundImageSrc
 
   return (
-    <div style={{ padding: '5px' }}>
+    <li style={{ display: 'block', listStyle: 'none', padding: '5px' }}>
       <Card>
         <Card.Img variant='top' src={ backgroundImageSrc } />
         <Card.Body>
@@ -100,7 +100,7 @@ const Event = ({ event, upcoming }) => {
           </Button>
         </Card.Body>
       </Card>
-    </div>
+    </li>
   )
 }
 
