@@ -69,6 +69,7 @@ const Event = ({ event, upcoming }) => {
   let masksBackgroundImageSrc = '/event-images/masks.jpg'
   let monsterOfTheWeekBackgroundImageSrc = '/event-images/monster-of-the-week.jpg'
   let honeyHeistBackgroundImageSrc = '/event-images/honey-heist.png'
+  let beamSaberBackgroundImageSrc = '/event-images/beam-saber.png'
 
   let backgroundImageSrc
   if (text.includes("Masks"))
@@ -79,6 +80,9 @@ const Event = ({ event, upcoming }) => {
 
   if (text.includes("Single Session"))
     backgroundImageSrc = honeyHeistBackgroundImageSrc
+  
+  if (text.includes("Beam Saber"))
+    backgroundImageSrc = beamSaberBackgroundImageSrc
 
   return (
     <li style={{ display: 'block', listStyle: 'none', padding: '5px' }}>
